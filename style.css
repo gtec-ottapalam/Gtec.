@@ -1,0 +1,808 @@
+/* ==========================================================================
+   G-TEC Ottapalam - Custom Stylesheet
+   Design Philosophy: Vibrant Royal Blue Primary + Radiant Pop Yellow/Amber Contrasting
+   Inspired by Behance Education Reference & Image 1 Laptop Screen Layout
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  
+  --color-pop-yellow: #FBBF24;
+  --color-pop-amber: #F59E0B;
+  --color-pop-glow: rgba(251, 191, 36, 0.35);
+  --color-pop-coral: #FF6B4A;
+
+  --color-dark: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-text-main: #1E293B;
+  --color-text-muted: #64748B;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 10px 15px -8px rgba(15, 23, 42, 0.06);
+  --shadow-blue-glow: 0 20px 45px -10px rgba(37, 99, 235, 0.45);
+  --shadow-amber-glow: 0 12px 30px -5px rgba(245, 158, 11, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--color-text-main);
+  background-color: #F8FAFC;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ==========================================================================
+   Background Giant Typography (Matches Reference Hero Backdrop)
+   ========================================================================== */
+.hero-backdrop-typography {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(4rem, 16vw, 15rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2.5px rgba(37, 99, 235, 0.16);
+  letter-spacing: 0.12em;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Laptop / Device Screen Mockup Wrapper (Directly from Reference Image 1)
+   ========================================================================== */
+.laptop-stage-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.laptop-frame {
+  position: relative;
+  background: #111827;
+  border: 10px solid #1F2937;
+  border-top-width: 12px;
+  border-radius: 28px 28px 12px 12px;
+  box-shadow: 
+    0 35px 80px -20px rgba(15, 23, 42, 0.35),
+    0 15px 35px -10px rgba(37, 99, 235, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.laptop-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 18px;
+  background: #1F2937;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.camera-lens {
+  width: 6px;
+  height: 6px;
+  background: #030712;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(59, 130, 246, 0.8);
+}
+
+.camera-indicator {
+  width: 3.5px;
+  height: 3.5px;
+  background: #10B981;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.laptop-base {
+  height: 16px;
+  background: linear-gradient(180deg, #374151 0%, #1F2937 100%);
+  border-radius: 0 0 32px 32px;
+  margin: 0 auto;
+  width: 104%;
+  position: relative;
+  left: -2%;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.laptop-lip {
+  width: 140px;
+  height: 5px;
+  background: #111827;
+  border-radius: 0 0 6px 6px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Vibrant Blue Hero Canvas
+   ========================================================================== */
+.hero-vibrant-canvas {
+  background: linear-gradient(145deg, #1D4ED8 0%, #2563EB 50%, #3B82F6 100%);
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+/* Concentric Glow Ripples behind the Student */
+.concentric-waves {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 620px;
+  height: 620px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wave-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+}
+
+.wave-ring-1 { width: 340px; height: 340px; }
+.wave-ring-2 { width: 480px; height: 480px; border-color: rgba(255, 255, 255, 0.08); }
+.wave-ring-3 { width: 620px; height: 620px; border-color: rgba(255, 255, 255, 0.05); }
+
+/* Ambient Blue Glow Orbs */
+.glow-orb-top-left {
+  position: absolute;
+  top: -120px;
+  left: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.glow-orb-bottom-right {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Hand-Drawn Contrasting Doodles (Yellow / Amber)
+   ========================================================================== */
+.doodle-sun {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  animation: rotate-doodle 24s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+}
+
+.doodle-star {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  animation: pulse-star 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.7));
+}
+
+.doodle-squiggle {
+  position: absolute;
+  width: 110px;
+  height: 45px;
+  pointer-events: none;
+}
+
+@keyframes rotate-doodle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-star {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+  50% { transform: scale(1.18) rotate(12deg); opacity: 1; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-alt {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+
+.floating-card-left {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+.floating-card-right {
+  animation: float-alt 6s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Floating Glassmorphic Hero Cards (Matches Reference Image 1)
+   ========================================================================== */
+.hero-glass-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 40px -10px rgba(15, 23, 42, 0.18),
+    0 10px 15px -5px rgba(37, 99, 235, 0.15);
+  color: var(--color-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-glass-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 25px 45px -10px rgba(15, 23, 42, 0.22),
+    0 12px 20px -5px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   Hero Interactive Course Search Pill
+   ========================================================================== */
+.hero-search-pill {
+  background: #FFFFFF;
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+  padding: 6px 8px 6px 20px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-search-pill:focus-within {
+  border-color: var(--color-pop-yellow);
+  box-shadow: 0 16px 36px rgba(251, 191, 36, 0.35);
+}
+
+.hero-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  width: 100%;
+  font-family: inherit;
+}
+
+.hero-search-input::placeholder {
+  color: #94A3B8;
+}
+
+/* Pop Buttons & Badges */
+.btn-pop-yellow {
+  background: var(--color-pop-yellow);
+  color: #0F172A;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  padding: 10px 24px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px -3px var(--color-pop-glow);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pop-yellow:hover {
+  background: #F59E0B;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -2px rgba(245, 158, 11, 0.45);
+}
+
+.btn-white-pill {
+  background: #FFFFFF;
+  color: var(--color-primary-700);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  padding: 9px 22px;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-white-pill:hover {
+  background: #F8FAFC;
+  color: var(--color-primary-800);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Accreditation Marquee
+   ========================================================================== */
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee-slide 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Course Catalog Cards & Filters
+   ========================================================================== */
+.category-tab-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.category-tab-btn:hover {
+  background: #F1F5F9;
+  color: var(--color-primary-700);
+  border-color: #CBD5E1;
+}
+
+.category-tab-btn.active {
+  background: var(--color-primary-600);
+  color: #FFFFFF;
+  border-color: var(--color-primary-600);
+  box-shadow: 0 8px 18px -4px rgba(37, 99, 235, 0.4);
+}
+
+.level-chip-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748B;
+  background: transparent;
+  border: 1px solid #E2E8F0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.level-chip-btn:hover {
+  border-color: var(--color-pop-amber);
+  color: var(--color-dark);
+}
+
+.level-chip-btn.active {
+  background: #FEF3C7;
+  color: #92400E;
+  border-color: #FCD34D;
+  font-weight: 700;
+}
+
+/* Course Card */
+.course-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  border-color: #93C5FD;
+  box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.14), 0 8px 12px -6px rgba(15, 23, 42, 0.06);
+}
+
+.course-card .badge-level {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-level-certificate { background: #E0F2FE; color: #0369A1; }
+.badge-level-diploma { background: #FEF3C7; color: #92400E; }
+.badge-level-master { background: #EDE9FE; color: #6D28D9; }
+.badge-level-sap { background: #DCFCE7; color: #15803D; }
+
+/* ==========================================================================
+   Stats Highlights Section
+   ========================================================================== */
+.stat-box {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  border-color: #BFDBFE;
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-pop-yellow));
+}
+
+/* ==========================================================================
+   Modals & Drawers
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content-box {
+  background: #FFFFFF;
+  border-radius: 28px;
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.35);
+  transform: scale(0.92) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content-box {
+  transform: scale(1) translateY(0);
+}
+
+/* Floating Action Buttons */
+.floating-actions-bar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-whatsapp-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.55);
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hero-vibrant-canvas {
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+  .laptop-frame {
+    border-width: 6px;
+    border-radius: 18px;
+  }
+  .laptop-base {
+    display: none;
+  }
+  .floating-card-left, .floating-card-right {
+    position: static !important;
+    margin: 1rem auto;
+    width: 100% !important;
+  }
+}
+
+
+/* ==========================================================================
+   SCROLLYTELLING ANIMATION ENGINE (Inspired by armor-bd.com)
+   Lenis Smooth Scrolling + GSAP ScrollTrigger Pinned Scrubbing
+   ========================================================================== */
+
+/* Top Interactive Scroll Progress Indicator */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3.5px;
+  background: linear-gradient(90deg, #2563EB, #FBBF24, #FF6B4A);
+  z-index: 9999;
+  transition: width 0.08s ease-out;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+  pointer-events: none;
+}
+
+/* Ambient Cursor Glow Follower (Desktop only) */
+.ambient-cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.14) 0%, rgba(251, 191, 36, 0.08) 35%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9990;
+  mix-blend-mode: multiply;
+  transition: opacity 0.3s ease, transform 0.12s ease-out;
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ambient-cursor-glow {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   ACT 2: PINNED 3-STEP STUDENT JOURNEY (SCROLLYTELLING)
+   ========================================================================== */
+.scrolly-journey-container {
+  position: relative;
+  height: 300vh;
+  background: #0B1120;
+  color: #FFFFFF;
+}
+
+.scrolly-journey-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.scrolly-timeline-line {
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 20px;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+.scrolly-timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #FBBF24, #2563EB);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px #FBBF24;
+  transition: height 0.1s linear;
+}
+
+.scrolly-step-text-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolly-step-text-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scrolly-photo-stack {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.scrolly-photo-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolly-photo-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   ACT 3: PINNED HORIZONTAL STREAM TRACK (VERTICAL-TO-HORIZONTAL SCROLL)
+   ========================================================================== */
+.scrolly-horizontal-section {
+  position: relative;
+  height: 380vh;
+  background: #0F172A;
+  color: #FFFFFF;
+}
+
+.scrolly-horizontal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scrolly-horizontal-track {
+  display: flex;
+  gap: 2rem;
+  padding-left: 5vw;
+  padding-right: 15vw;
+  width: max-content;
+  will-change: transform;
+}
+
+.stream-scroll-card {
+  width: 380px;
+  height: 520px;
+  border-radius: 28px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.stream-scroll-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #FBBF24;
+  box-shadow: 0 30px 60px -12px rgba(251, 191, 36, 0.25);
+}
+
+/* Expand-on-scroll hero styling */
+.hero-stage-expanded {
+  transform: scale(1.04);
+  transition: transform 0.4s ease-out;
+}
